@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>security-amanda.blanco</title>
+    <meta
+      name="description"
+      content="Curriculum vitae de Amanda Blanco, profesional de seguridad de la información y ciberseguridad."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar" aria-label="Acciones del curriculum">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio del CV">AB</a>
+        <nav class="nav-links" aria-label="Secciones">
+          <a href="#experiencia">Experiencia</a>
+          <a href="#estudios">Estudios</a>
+          <a href="#tecnologias">Tecnologías</a>
+          <a href="#habilidades">Habilidades</a>
+        </nav>
+        <button class="print-button" type="button" data-print>
+          Exportar PDF
+        </button>
+      </header>
+
+      <main id="inicio" class="resume" aria-label="Curriculum vitae Amanda Blanco">
+        <aside class="profile-panel" aria-label="Perfil y contacto">
+          <div class="portrait-wrap">
+            <img
+              class="portrait"
+              src="./assets/Amanda_Blanco_CV_photo.png"
+              alt="Foto de Amanda Blanco"
+              width="142"
+              height="158"
+            >
+          </div>
+
+          <section class="panel-section">
+            <p class="eyebrow">Ciberseguridad</p>
+            <h1>Amanda Blanco</h1>
+            <ul id="contact-list" class="contact-list identity-contact" aria-label="Información de contacto"></ul>
+          </section>
+
+          <section class="panel-section focus-card" aria-labelledby="focus-title">
+            <h2 id="focus-title">Fortalezas clave</h2>
+            <ul id="focus-list" class="tag-list"></ul>
+          </section>
+
+          <section class="panel-section success-card" aria-labelledby="success-title">
+            <h2 id="success-title">Casos de éxito</h2>
+            <ul id="success-list" class="success-list"></ul>
+          </section>
+        </aside>
+
+        <div class="content-panel">
+          <section class="hero-card" aria-labelledby="profile-title">
+            <p class="section-kicker">Perfil profesional</p>
+            <h2 id="profile-title">Ingeniero en Ciberseguridad Senior</h2>
+            <div id="profile-summary" class="summary"></div>
+          </section>
+
+          <section id="experiencia" class="resume-section" aria-labelledby="experience-title">
+            <div class="section-heading">
+              <span>01</span>
+              <h2 id="experience-title">Experiencia profesional</h2>
+            </div>
+            <div id="experience-list" class="timeline"></div>
+          </section>
+
+          <section id="estudios" class="resume-section" aria-labelledby="education-title">
+            <div class="section-heading">
+              <span>02</span>
+              <h2 id="education-title">Estudios y certificaciones</h2>
+            </div>
+            <div id="education-list" class="compact-list"></div>
+          </section>
+
+          <section id="tecnologias" class="resume-section" aria-labelledby="technology-title">
+            <div class="section-heading">
+              <span>03</span>
+              <h2 id="technology-title">Tecnologías</h2>
+            </div>
+            <div id="technology-grid" class="skill-grid"></div>
+          </section>
+
+          <section id="habilidades" class="resume-section" aria-labelledby="skills-title">
+            <div class="section-heading">
+              <span>04</span>
+              <h2 id="skills-title">Habilidades y destrezas</h2>
+            </div>
+            <div id="skills-grid" class="two-column-list"></div>
+          </section>
+
+          <section class="resume-section" aria-labelledby="languages-title">
+            <div class="section-heading">
+              <span>05</span>
+              <h2 id="languages-title">Idiomas</h2>
+            </div>
+            <div id="languages-list" class="language-list"></div>
+          </section>
+        </div>
+      </main>
+      <div class="print-footer" aria-hidden="true">CV23062026</div>
+    </div>
+
+    <script src="./cv-data.js?v=20260624-11"></script>
+    <script src="./app.js?v=20260624-11"></script>
+  </body>
+</html>
