@@ -28,9 +28,18 @@ const renderContact = () => {
   cv.contact.forEach((item) => {
     const li = create("li");
     const label = create("span", "contact-label", item.label);
-    const value = item.href ? create("a", "", item.value) : create("span", "", item.value);
+    const value = item.href || item.type === "email" ? create("a", "", item.value) : create("span", "", item.value);
 
-    if (item.href) {
+    if (item.type === "email") {
+      const address = [item.user, [item.domain, item.tld].join(".")].join("@");
+
+      value.href = "#contacto";
+      value.className = "contact-action";
+      value.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.href = ["mailto", address].join(":");
+      });
+    } else if (item.href) {
       value.href = item.href;
       if (item.href.startsWith("http")) {
         value.target = "_blank";
@@ -157,7 +166,7 @@ const renderProfile = () => {
 };
 
 const render = () => {
-  document.title = `${cv.name} | CV Ciberseguridad`;
+  document.title = "security-amanda.blanco";
   renderProfile();
   byId("focus-list").innerHTML = "";
   appendList(byId("focus-list"), cv.focus);

@@ -9,14 +9,19 @@ window.cvData = {
       "Poseo conocimientos y experiencia en ITIL, ISO 27001, ISO 31000, PCI, NIST, SCRUM, MITRE ATT&CK, Cloud Computing, Redes y liderazgo de equipos. Además, cuento con certificaciones en ciberseguridad y metodología ágil. Me caracteriza una fuerte orientación al aprendizaje continuo, la innovación y la generación de valor a través de la tecnología y la ciberseguridad.",
     ],
     contact: [
-      { label: "Ubicación", value: "Colombia - Bogotá" },
-      { label: "Teléfono", value: "+573504649718", href: "tel:+573504649718" },
-      { label: "Email", value: "ablancoyz@gmail.com", href: "mailto:ablancoyz@gmail.com" },
-      { label: "F.N", value: "Octubre-1989" },
+      { label: "Ubicación", value: "Bogotá, Colombia" },
+      {
+        label: "Contacto",
+        type: "email",
+        value: "Contactar por email",
+        user: "ablancoyz",
+        domain: "gmail",
+        tld: "com",
+      },
       {
         label: "LinkedIn",
-        value: "amanda-blanco-5a7264a0/details/certifications",
-        href: "https://www.linkedin.com/in/amanda-blanco-5a7264a0/details/certifications/",
+        value: "amanda-blanco-5a7264a0",
+        href: "https://www.linkedin.com/in/amanda-blanco-5a7264a0/",
       },
     ],
     focus: [
