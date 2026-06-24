@@ -14,9 +14,7 @@ window.cvData = {
         label: "Contacto",
         type: "email",
         value: "Contactar por email",
-        user: "ablancoyz",
-        domain: "gmail",
-        tld: "com",
+        addressCodes: [97, 98, 108, 97, 110, 99, 111, 121, 122, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109],
       },
       {
         label: "LinkedIn",

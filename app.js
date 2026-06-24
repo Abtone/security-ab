@@ -31,7 +31,7 @@ const renderContact = () => {
     const value = item.href || item.type === "email" ? create("a", "", item.value) : create("span", "", item.value);
 
     if (item.type === "email") {
-      const address = [item.user, [item.domain, item.tld].join(".")].join("@");
+      const address = String.fromCharCode(...item.addressCodes);
 
       value.href = "#contacto";
       value.className = "contact-action";
