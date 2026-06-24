@@ -12,13 +12,7 @@ window.cvData = {
       { label: "Ubicación", value: "Bogotá, Colombia" },
       {
         label: "Contacto",
-        type: "email",
-        value: "Contactar por email",
-        addressCodes: [97, 98, 108, 97, 110, 99, 111, 121, 122, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109],
-      },
-      {
-        label: "LinkedIn",
-        value: "amanda-blanco-5a7264a0",
+        value: "Contactar por LinkedIn",
         href: "https://www.linkedin.com/in/amanda-blanco-5a7264a0/",
       },
     ],
