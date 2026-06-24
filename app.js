@@ -45,6 +45,7 @@ const renderContact = () => {
 
 const renderExperience = () => {
   const list = byId("experience-list");
+  const labels = cv.labels || {};
   list.innerHTML = "";
 
   cv.experience.forEach((job) => {
@@ -65,7 +66,7 @@ const renderExperience = () => {
 
     if (job.highlights) {
       const highlights = create("p", "highlights");
-      const strong = create("strong", "", "Trabajos ejecutados a resaltar: ");
+      const strong = create("strong", "", labels.highlightPrefix || "Trabajos ejecutados a resaltar: ");
 
       highlights.append(strong, document.createTextNode(job.highlights));
       article.appendChild(highlights);
@@ -75,7 +76,7 @@ const renderExperience = () => {
       const achievementsTitle = create("p", "highlights");
       const achievements = create("ul", "achievement-list");
 
-      achievementsTitle.appendChild(create("strong", "", job.highlightTitle || "Logros clave:"));
+      achievementsTitle.appendChild(create("strong", "", job.highlightTitle || labels.keyAchievements || "Logros clave:"));
       appendList(achievements, job.achievements);
       article.append(achievementsTitle, achievements);
     }
@@ -157,7 +158,7 @@ const renderProfile = () => {
 };
 
 const render = () => {
-  document.title = "security-amanda.blanco";
+  document.title = cv.documentTitle || "security-amanda.blanco";
   renderProfile();
   byId("focus-list").innerHTML = "";
   appendList(byId("focus-list"), cv.focus);

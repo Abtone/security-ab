@@ -3,7 +3,7 @@ window.cvData = {
     name: "Amanda Blanco",
     profileTitle: "Ingeniero en Ciberseguridad Senior",
     profile: [
-      "Profesional apasionada por el área de ciberseguridad, con más de 10 años de experiencia en seguridad de la información y tecnología. He desarrollado mi carrera en organizaciones gubernamentales, bancarias, aseguradoras y empresas de distintos sectores, participando en la gestión integral de la seguridad, operaciones SOC, respuesta a incidentes, análisis de amenazas avanzadas (APT), Threat Intelligence, correlación avanzada de eventos e investigaciones tecnológicas.",
+      "Profesional apasionada por el área de ciberseguridad, con más de 11 años de experiencia en seguridad de la información y tecnología. He desarrollado mi carrera en organizaciones gubernamentales, bancarias, aseguradoras y empresas de distintos sectores, participando en la gestión integral de la seguridad, operaciones SOC, respuesta a incidentes, análisis de amenazas avanzadas (APT), Threat Intelligence, correlación avanzada de eventos e investigaciones tecnológicas.",
       "Cuento con experiencia en liderazgo y gestión de equipos de ciberseguridad, implementación y administración de diversas plataformas de seguridad DLP, encriptación de disco, SIEM, EDR/XDR y monitoreo de seguridad, así como en la definición de procesos, procedimientos, playbooks, documentación técnica, auditorías de sistemas, gestión de proyectos y mejora continua de servicios de ciberseguridad. He participado en iniciativas de Red Team, Blue Team y Purple Team, además de planes de continuidad operacional, recuperación ante desastres, pruebas funcionales y programas de capacitación técnica para clientes y usuarios.",
       "Durante los últimos años he impulsado la adopción de Inteligencia Artificial y automatización aplicada a las operaciones de ciberseguridad, optimizando procesos de monitoreo, análisis y respuesta a incidentes, reduciendo tiempos operativos y mejorando la eficiencia y calidad de los resultados entregados a clientes y organizaciones.",
       "Poseo conocimientos y experiencia en ITIL, ISO 27001, ISO 31000, PCI, NIST, SCRUM, MITRE ATT&CK, Cloud Computing, Redes y liderazgo de equipos. Además, cuento con certificaciones en ciberseguridad y metodología ágil. Me caracteriza una fuerte orientación al aprendizaje continuo, la innovación y la generación de valor a través de la tecnología y la ciberseguridad.",
@@ -24,7 +24,7 @@ window.cvData = {
       "Red Team / Blue Team / Purple Team",
       "Seguridad de la Información y tecnológica",
       "EDR/XDR / SIEM/SOAR",
-      "AI",
+      "AI y Automatización",
       "Mejora de Proceso",
       "Atención de cliente",
       "Comunicación efectiva",
@@ -48,7 +48,7 @@ window.cvData = {
           "Responsable de la asignación, coordinación y seguimiento de actividades operativas del equipo SOC, brindando entrenamiento y acompañamiento técnico a analistas de ciberseguridad L1, L2 y L3, así como seguimiento a planes de capacitación y certificaciones del equipo. Encargada del apoyo técnico y análisis avanzado de incidentes y alertas complejas de seguridad, administración y operación de plataformas de ciberseguridad como SIEM, EDR, XDR y herramientas de monitoreo, además de la gestión y optimización de procesos operativos de ciberseguridad.",
           "Participación activa en la elaboración, actualización y mejora continua de procedimientos, protocolos y playbooks de seguridad, así como en el diseño y optimización de flujos operativos para notificación y escalamiento de alertas hacia clientes. Responsable de la atención y documentación de incidentes de seguridad, coordinación de respuesta ante eventos críticos y elaboración de informes mensuales de servicios SOC y métricas de seguridad para clientes.",
           "Liderar mesas técnicas y reuniones con clientes para seguimiento de servicios e incidentes de ciberseguridad, contribuyendo además en iniciativas de automatización y mejora operativa mediante el uso de herramientas basadas en Inteligencia Artificial (AI) para optimizar análisis, automatización, documentación y eficiencia operativa.",
-          "Con conocimientos en gestión de vulnerabilidades mediante herramientas como Tenable, Nessus y OpenVAS, ejecución de pruebas de seguridad y análisis de archivos ejecutables para identificación de posibles brechas o comportamientos maliciosos, así como monitoreo, correlación y análisis de eventos de seguridad para detección temprana de amenazas y fortalecimiento continuo de capacidades de monitoreo y seguridad.",
+          "Apoyo en gestión de vulnerabilidades mediante herramientas como Tenable y OpenVAS, ejecución de pruebas de seguridad y análisis de archivos ejecutables para identificación de posibles brechas o comportamientos maliciosos, así como monitoreo, correlación y análisis de eventos de seguridad para detección temprana de amenazas y fortalecimiento continuo de capacidades de monitoreo y seguridad.",
         ],
       },
       {
@@ -165,6 +165,7 @@ window.cvData = {
         period: "Marzo 2022",
         detail: "Breach & Attack Simulation, Operationalizing MITRE ATT&CK y Purple Teaming.",
       },
+      { title: "Certificación de MITRE ATT&CK nivel Intermedio", period: "En curso" },
       {
         title: "Certificaciones de TrendAI",
         period: "Junio 2026",
@@ -176,7 +177,7 @@ window.cvData = {
         detail: "Essentials Associate Certification y Administrator Associate Certification.",
       },
       { title: "Estudio certificación CISSP", period: "En curso" },
-      { title: "Certificación B1 Go fluent", period: "2022 - 2023" },
+      { title: "Certificación B1 Go fluent", period: "Noviembre 2023" },
       { title: "Inglés B1. Smart", period: "Febrero 2025" },
       {
         title: "Especialista en PowerShell 5, PowerShell Azure, Core 2016",
@@ -219,7 +220,7 @@ window.cvData = {
           "Stellar Cyber: SIEM nueva generación.",
           "Fortinet: FortiSIEM.",
           "Wazuh.",
-          "Nessus, OpenVAS, Tenable.",
+          "Tenable, Nessus, OpenVAS.",
           "Cloudflare: Anti DDoS.",
           "SentinelOne: EDR and Control Device.",
           "IBM: Qradar.",
@@ -227,8 +228,8 @@ window.cvData = {
         ],
       },
       {
-        title: "AI y automatización",
-        items: ["Gamma (AI)", "Codex (AI)", "ChatGPT / Copilot", "Lucidchart AI", "n8n"],
+        title: "AI y Automatización",
+        items: ["Gamma (AI)", "Codex (AI)", "ChatGPT / Copilot", "Claude Code", "Lucidchart AI", "n8n"],
       },
       {
         title: "Herramientas ofimáticas",
@@ -238,7 +239,7 @@ window.cvData = {
           "Atlassian: confluence.",
         ],
       },
-      { title: "Programación", items: ["HTML", "XML", "PYTHON", "PHP"] },
+      { title: "Programación", items: ["HTML/XML", "Python/PHP", "GitHub"] },
       { title: "Entornos Cloud", items: ["Azure y AWS"] },
       {
         title: "Metodologías sistemas y agiles",

@@ -104,6 +104,42 @@ button {
   background: var(--accent-soft);
 }
 
+.language-switch {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+.language-switch a,
+.language-switch span {
+  display: grid;
+  min-width: 30px;
+  height: 30px;
+  place-items: center;
+  padding: 0 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.language-switch [aria-current="page"] {
+  color: #ffffff;
+  background: var(--accent-dark);
+}
+
+.language-switch a:hover,
+.language-switch a:focus-visible {
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
 .print-button {
   flex: 0 0 auto;
   padding: 10px 14px;
