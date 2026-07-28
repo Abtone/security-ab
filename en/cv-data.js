@@ -9,7 +9,7 @@ window.cvData = {
     },
     profile: [
       "Professional passionate about cybersecurity, with more than 11 years of experience in information security and technology. I have built my career across government, banking, insurance, and multi-industry environments, contributing to end-to-end security management, SOC operations, incident response, advanced threat analysis (APT), Threat Intelligence, advanced event correlation, and technology investigations.",
-      "Experienced in leading and coordinating cybersecurity teams, implementing and administering security platforms such as DLP, disk encryption, SIEM, EDR/XDR, and security monitoring tools. I have also contributed to process definition, procedures, playbooks, technical documentation, system audits, project management, and continuous improvement of cybersecurity services. My background includes Red Team, Blue Team, and Purple Team initiatives, as well as business continuity planning, disaster recovery, functional testing, and technical training programs for clients and users.",
+      "Experienced in leading and coordinating cybersecurity teams, implementing and administering security platforms such as DLP, disk encryption, SIEM, EDR/XDR, email security, cloud security controls, and other security monitoring tools. I have also contributed to process definition, procedures, playbooks, technical documentation, system audits, project management, and continuous improvement of cybersecurity services. My background includes Red Team, Blue Team, and Purple Team initiatives, as well as business continuity planning, disaster recovery, functional testing, and technical training programs for clients and users.",
       "In recent years, I have promoted the adoption of Artificial Intelligence and automation in cybersecurity operations, optimizing monitoring, analysis, and incident response workflows, reducing operational time, and improving the efficiency and quality of deliverables for clients and organizations.",
       "I bring hands-on knowledge and experience in ITIL, ISO 27001, ISO 31000, PCI, NIST, SCRUM, MITRE ATT&CK, Cloud Computing, Networking, and team leadership. I also hold certifications in cybersecurity and agile methodologies. I am strongly driven by continuous learning, innovation, and value creation through technology and cybersecurity.",
     ],
@@ -270,7 +270,7 @@ window.cvData = {
     ],
     languages: [
       { name: "Spanish", level: "Native language" },
-      { name: "English", level: "B1 (Goufluent and Smart certified)" },
+      { name: "English", level: "Conversational | B1 certified by Smart and GoFluent" },
     ],
   },
 };

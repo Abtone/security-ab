@@ -4,7 +4,7 @@ window.cvData = {
     profileTitle: "Ingeniero en Ciberseguridad Senior",
     profile: [
       "Profesional apasionada por el área de ciberseguridad, con más de 11 años de experiencia en seguridad de la información y tecnología. He desarrollado mi carrera en organizaciones gubernamentales, bancarias, aseguradoras y empresas de distintos sectores, participando en la gestión integral de la seguridad, operaciones SOC, respuesta a incidentes, análisis de amenazas avanzadas (APT), Threat Intelligence, correlación avanzada de eventos e investigaciones tecnológicas.",
-      "Cuento con experiencia en liderazgo y gestión de equipos de ciberseguridad, implementación y administración de diversas plataformas de seguridad DLP, encriptación de disco, SIEM, EDR/XDR y monitoreo de seguridad, así como en la definición de procesos, procedimientos, playbooks, documentación técnica, auditorías de sistemas, gestión de proyectos y mejora continua de servicios de ciberseguridad. He participado en iniciativas de Red Team, Blue Team y Purple Team, además de planes de continuidad operacional, recuperación ante desastres, pruebas funcionales y programas de capacitación técnica para clientes y usuarios.",
+      "Cuento con experiencia en liderazgo y gestión de equipos de ciberseguridad, implementación y administración de diversas plataformas de seguridad DLP, encriptación de disco, SIEM, EDR/XDR, seguridad de correo, controles de seguridad cloud y otras herramientas de monitoreo de seguridad, así como en la definición de procesos, procedimientos, playbooks, documentación técnica, auditorías de sistemas, gestión de proyectos y mejora continua de servicios de ciberseguridad. He participado en iniciativas de Red Team, Blue Team y Purple Team, además de planes de continuidad operacional, recuperación ante desastres, pruebas funcionales y programas de capacitación técnica para clientes y usuarios.",
       "Durante los últimos años he impulsado la adopción de Inteligencia Artificial y automatización aplicada a las operaciones de ciberseguridad, optimizando procesos de monitoreo, análisis y respuesta a incidentes, reduciendo tiempos operativos y mejorando la eficiencia y calidad de los resultados entregados a clientes y organizaciones.",
       "Poseo conocimientos y experiencia en ITIL, ISO 27001, ISO 31000, PCI, NIST, SCRUM, MITRE ATT&CK, Cloud Computing, Redes y liderazgo de equipos. Además, cuento con certificaciones en ciberseguridad y metodología ágil. Me caracteriza una fuerte orientación al aprendizaje continuo, la innovación y la generación de valor a través de la tecnología y la ciberseguridad.",
     ],
@@ -265,7 +265,7 @@ window.cvData = {
     ],
     languages: [
       { name: "Español", level: "Lengua materna" },
-      { name: "Inglés", level: "B1 (Certificado de Goufluent y Smart)" },
+      { name: "Inglés", level: "Conversacional | B1 certificado en Smart y GoFluent" },
     ],
   },
 };
