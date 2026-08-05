@@ -66,7 +66,7 @@ const renderExperience = () => {
 
     if (job.highlights) {
       const highlights = create("p", "highlights");
-      const strong = create("strong", "", labels.highlightPrefix || "Trabajos ejecutados a resaltar: ");
+      const strong = create("strong", "", labels.highlightPrefix || "Contribuciones y logros clave: ");
 
       highlights.append(strong, document.createTextNode(job.highlights));
       article.appendChild(highlights);

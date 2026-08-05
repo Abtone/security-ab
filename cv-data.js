@@ -20,6 +20,7 @@ window.cvData = {
       "Gestión de incidentes",
       "SOC",
       "Threat Intelligence",
+      "Creación de reglas y CDU de detección de amenazas desde cero",
       "MITRE ATT&CK",
       "Red Team / Blue Team / Purple Team",
       "Seguridad de la Información y tecnológica",
@@ -70,7 +71,7 @@ window.cvData = {
         role: "IT Security Specialist Senior",
         period: "Agosto 2023 - Diciembre 2024",
         description:
-          "Líder de proceso de incidentes de seguridad en la región de North América y LATAM. Administrador de Dominio y certificados SSL. Seguimiento y mejora de procesos de proveedores. Líder técnico de proyecto de seguridad de VPN. Atención de incidentes de seguridad Altos y Críticos. Gestionar solicitudes y aprobaciones de usuarios finales. Administración parcial del EDR.",
+          "Líder de proceso de incidentes de seguridad en la región de North América y LATAM. Administrador de Dominio y certificados SSL. Seguimiento y mejora de procesos de proveedores. Líder técnico de proyecto de seguridad de VPN. Atención de incidentes de seguridad Altos y Críticos. Gestión de solicitudes y aprobaciones de usuarios finales a través de ServiceNow, garantizando el seguimiento y cumplimiento de los flujos establecidos. Administración parcial del EDR.",
         highlights:
           "Mejora del tiempo de respuesta de incidentes y solicitudes de seguridad. Creación de protocolo de atención de incidentes de seguridad y playbooks. Orquestar y liderar incidentes logrando el trabajo en equipo con los departamentos necesario para la atención eficaz y oportuna de la eventualidad.",
       },
@@ -97,7 +98,7 @@ window.cvData = {
         role: "Consultor de Seguridad",
         period: "Septiembre 2015 - Agosto 2018",
         description:
-          "Especialista en soluciones de Mcafee. Administración, implementación, asistencia de incidencia, migración, actualización, dictar talleres de entrenamiento Mcafee a los clientes y trabajadores. Atención al cliente. Bases de datos. Auditoria. Levantamiento de información para proyectos. Planes de recuperación antes desastres. Pruebas funcionales y laboratorios. Documentación. Seguimientos de proyectos. Análisis y gestión de amenazas. Virtualización.",
+          "Especialista en soluciones de McAfee. Administración, implementación, gestión de incidentes de seguridad, migración, actualización y talleres de entrenamiento McAfee para clientes y trabajadores. Gestión y seguimiento de solicitudes de servicio a través de ServiceNow, asegurando su correcta asignación y resolución. Atención al cliente. Bases de datos. Auditoría. Levantamiento de información para proyectos. Planes de recuperación ante desastres. Pruebas funcionales y laboratorios. Documentación. Seguimiento de proyectos. Análisis y gestión de amenazas. Virtualización.",
         highlights:
           "Implementación de distintas soluciones de Mcafee. Aumentar el porcentaje de cumplimiento de distintas empresas. Optimizar varios procesos. Mejora en las técnicas de capacitación a clientes y personal. Proyecto piloto de implementación GLPI para helpdesk.",
       },

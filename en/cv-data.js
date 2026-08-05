@@ -4,7 +4,7 @@ window.cvData = {
     name: "Amanda Blanco",
     profileTitle: "Senior Cybersecurity Engineer",
     labels: {
-      highlightPrefix: "Selected work highlights: ",
+      highlightPrefix: "Key contributions and achievements: ",
       keyAchievements: "Key achievements:",
     },
     profile: [
@@ -25,6 +25,7 @@ window.cvData = {
       "Incident Management",
       "SOC",
       "Threat Intelligence",
+      "Threat detection rules and use cases from scratch",
       "MITRE ATT&CK",
       "Red Team / Blue Team / Purple Team",
       "Information and Technology Security",
@@ -75,7 +76,7 @@ window.cvData = {
         role: "IT Security Specialist Senior",
         period: "August 2023 - December 2024",
         description:
-          "Led the security incident process for North America and LATAM. Managed domain administration and SSL certificates. Followed up on vendor process improvements. Served as technical lead for a VPN security project. Managed high and critical security incidents, handled end-user requests and approvals, and partially administered EDR capabilities.",
+          "Led the security incident process for North America and LATAM. Managed domain administration and SSL certificates. Followed up on vendor process improvements. Served as technical lead for a VPN security project. Managed high and critical security incidents. Managed end-user requests and approvals through ServiceNow, ensuring follow-up and compliance with established workflows. Partially administered EDR capabilities.",
         highlights:
           "Improved response times for security incidents and requests. Created a security incident response protocol and playbooks. Orchestrated and led incidents, enabling effective teamwork across the departments required for timely and efficient response.",
       },
@@ -102,7 +103,7 @@ window.cvData = {
         role: "Security Consultant",
         period: "September 2015 - August 2018",
         description:
-          "Specialist in McAfee solutions, including administration, implementation, incident support, migration, updates, and McAfee training workshops for clients and employees. Supported customer service, databases, audits, project discovery, disaster recovery plans, functional testing and labs, documentation, project follow-up, threat analysis and management, and virtualization.",
+          "Specialist in McAfee solutions, including administration, implementation, security incident management, migrations, updates, and McAfee training workshops for clients and employees. Managed and tracked service requests through ServiceNow, ensuring proper assignment and resolution. Supported customer service, databases, audits, project discovery, disaster recovery plans, functional testing and labs, documentation, project follow-up, threat analysis and management, and virtualization.",
         highlights:
           "Implemented multiple McAfee solutions. Increased compliance levels across several companies. Optimized multiple processes. Improved client and staff training techniques. Delivered a GLPI helpdesk implementation pilot project.",
       },
