@@ -271,7 +271,7 @@ window.cvData = {
     ],
     languages: [
       { name: "Spanish", level: "Native language" },
-      { name: "English", level: "Conversational | B1 certified by Smart and GoFluent" },
+      { name: "English", level: "Upper Intermediate / Advanced" },
     ],
   },
 };
