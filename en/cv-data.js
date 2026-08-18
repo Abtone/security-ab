@@ -73,7 +73,7 @@ window.cvData = {
       },
       {
         company: "ADC Holcim Colombia",
-        role: "IT Security Specialist Senior",
+        role: "IT Security Specialist",
         period: "August 2023 - December 2024",
         description:
           "Led the security incident process for North America and LATAM. Managed domain administration and SSL certificates. Followed up on vendor process improvements. Served as technical lead for a VPN security project. Managed high and critical security incidents. Managed end-user requests and approvals through ServiceNow, ensuring follow-up and compliance with established workflows. Partially administered EDR capabilities.",
@@ -114,6 +114,16 @@ window.cvData = {
         period: "October 2007 - July 2017",
         detail: "UNEFA. Status: Graduated",
       },
+      {
+        title: "University Master's Degree in Cybersecurity",
+        period: "Expected completion: October 2027",
+        detail: "Universidad Europea. Status: In Progress.",
+      },
+      {
+        title: "University Expert in Business Intelligence and Decision Making",
+        period: "Expected completion: May 2027",
+        detail: "Universidad Europea. Status: In Progress.",
+      },
       { title: "Linux Server Administrator", period: "August 2016 - February 2017" },
       {
         title: "Information Security in Risk Analysis",
@@ -149,12 +159,12 @@ window.cvData = {
         period: "December 2020",
       },
       {
-        title: "Certified ISO/IEC 27001:2013 Lead Auditor (I27001LA)",
-        period: "October 2020",
+        title: "Certified ISO/IEC 27001:2022 Lead Auditor (I27001LA)",
+        period: "June 2026",
       },
       {
         title: "Lead Cybersecurity Professional Certificate (LCSPC)",
-        period: "September 2020",
+        period: "June 2026",
       },
       { title: "Scrum Foundation Professional Certificate (SFPC)", period: "August 2020" },
       {
@@ -235,7 +245,7 @@ window.cvData = {
       },
       {
         title: "AI and Automation",
-        items: ["Gamma (AI)", "Codex (AI)", "ChatGPT / Copilot", "Claude Code", "Lucidchart AI", "n8n"],
+        items: ["Gamma (AI)", "Codex (AI)", "ChatGPT / Copilot", "Claude Code", "Lucidchart AI", "n8n", "API REST"],
       },
       {
         title: "Office Productivity Tools",
@@ -271,7 +281,7 @@ window.cvData = {
     ],
     languages: [
       { name: "Spanish", level: "Native language" },
-      { name: "English", level: "Upper Intermediate / Advanced" },
+      { name: "English", level: "Conversational" },
     ],
   },
 };

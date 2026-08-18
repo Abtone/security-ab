@@ -68,7 +68,7 @@ window.cvData = {
       },
       {
         company: "ADC Holcim Colombia",
-        role: "IT Security Specialist Senior",
+        role: "IT Security Specialist",
         period: "Agosto 2023 - Diciembre 2024",
         description:
           "Líder de proceso de incidentes de seguridad en la región de North América y LATAM. Administrador de Dominio y certificados SSL. Seguimiento y mejora de procesos de proveedores. Líder técnico de proyecto de seguridad de VPN. Atención de incidentes de seguridad Altos y Críticos. Gestión de solicitudes y aprobaciones de usuarios finales a través de ServiceNow, garantizando el seguimiento y cumplimiento de los flujos establecidos. Administración parcial del EDR.",
@@ -109,6 +109,16 @@ window.cvData = {
         period: "Octubre 2007 - Julio 2017",
         detail: "UNEFA. Status: Graduado",
       },
+      {
+        title: "Máster Universitario en Ciberseguridad",
+        period: "Finalización prevista: Octubre 2027",
+        detail: "Universidad Europea. Status: En curso.",
+      },
+      {
+        title: "Experto Universitario en Business Intelligence and Decision Making",
+        period: "Finalización prevista: Mayo 2027",
+        detail: "Universidad Europea. Status: En curso.",
+      },
       { title: "Administrador de Servidores Linux", period: "Agosto 2016 - Febrero 2017" },
       {
         title: "Seguridad informática en análisis de riesgo",
@@ -144,12 +154,12 @@ window.cvData = {
         period: "Diciembre 2020",
       },
       {
-        title: "Certified ISO/IEC 27001:2013 Lead Auditor (I27001LA)",
-        period: "Octubre 2020",
+        title: "Certified ISO/IEC 27001:2022 Lead Auditor (I27001LA)",
+        period: "Junio 2026",
       },
       {
         title: "Lead Cybersecurity Professional Certificate (LCSPC)",
-        period: "Septiembre 2020",
+        period: "Junio 2026",
       },
       { title: "Scrum Foundation Professional Certificate (SFPC)", period: "Agosto 2020" },
       {
@@ -230,7 +240,7 @@ window.cvData = {
       },
       {
         title: "AI y Automatización",
-        items: ["Gamma (AI)", "Codex (AI)", "ChatGPT / Copilot", "Claude Code", "Lucidchart AI", "n8n"],
+        items: ["Gamma (AI)", "Codex (AI)", "ChatGPT / Copilot", "Claude Code", "Lucidchart AI", "n8n", "API REST"],
       },
       {
         title: "Herramientas ofimáticas",
@@ -266,7 +276,7 @@ window.cvData = {
     ],
     languages: [
       { name: "Español", level: "Lengua materna" },
-      { name: "Inglés", level: "Upper Intermediate / Advanced" },
+      { name: "Inglés", level: "Conversacional" },
     ],
   },
 };
