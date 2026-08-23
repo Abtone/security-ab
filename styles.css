@@ -609,15 +609,22 @@ button {
 
 @page {
   size: A4;
-  margin: 12mm;
+  margin: 10mm;
 }
 
 @media print {
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
   :root {
-    --bg: #ffffff;
+    --bg: #edf3f4;
     --surface: #ffffff;
-    --surface-muted: #ffffff;
-    --shadow: none;
+    --surface-muted: #f6fafb;
+    --shadow: 0 10px 26px rgba(18, 60, 85, 0.1);
   }
 
   html {
@@ -625,9 +632,11 @@ button {
   }
 
   body {
-    background: #ffffff;
-    color: #111827;
-    font-size: 10pt;
+    background:
+      linear-gradient(135deg, rgba(15, 107, 120, 0.1), transparent 32rem),
+      var(--bg);
+    color: var(--ink);
+    font-size: 9pt;
   }
 
   .app-shell {
@@ -653,15 +662,6 @@ button {
     display: block;
   }
 
-  .profile-panel,
-  .content-panel,
-  .hero-card,
-  .timeline-item,
-  .skill-card,
-  .language-item {
-    box-shadow: none;
-  }
-
   #estudios .compact-item {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -669,35 +669,68 @@ button {
 
   .profile-panel {
     display: grid;
-    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-columns: 118px minmax(0, 1fr);
     gap: 0;
     margin-bottom: 12px;
     overflow: visible;
-    border: 0;
+    break-inside: avoid;
+  }
+
+  .profile-panel,
+  .content-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .profile-panel {
+    display: grid;
+    position: static;
+    top: auto;
   }
 
   .portrait-wrap {
-    display: block;
-    padding: 0;
-    background: transparent;
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    place-items: center;
+    min-height: 138px;
+    padding: 12px;
+    background: linear-gradient(160deg, var(--accent-dark), #1a7280);
   }
 
   .portrait {
-    width: 92px;
-    height: 104px;
-    margin: 0;
-    border: 1px solid #d1d5db;
-    box-shadow: none;
+    width: 86px;
+    height: 98px;
+    margin: 0 auto;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
   }
 
   .panel-section {
-    padding: 0 0 8px;
+    padding: 12px 14px;
+    border-top: 1px solid var(--line);
+  }
+
+  .portrait-wrap + .panel-section {
+    grid-column: 2;
+    grid-row: 1;
     border-top: 0;
   }
 
-  .contact-card,
-  .focus-card {
+  .focus-card,
+  .success-card {
     grid-column: 1 / -1;
+  }
+
+  .profile-panel h1 {
+    font-size: 24pt;
+  }
+
+  .identity-contact {
+    margin-top: 10px;
+    padding-top: 8px;
   }
 
   .contact-list,
@@ -705,75 +738,91 @@ button {
   .success-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 12px;
-  }
-
-  .contact-list li {
-    display: block;
-  }
-
-  .contact-label {
-    display: inline;
-    margin-right: 3px;
+    gap: 7px;
   }
 
   .tag-list li {
-    padding: 0;
-    color: #374151;
-    background: transparent;
+    max-width: 100%;
+    padding: 7px 9px;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.25;
   }
 
   .success-list li {
-    padding-left: 10px;
-    color: #374151;
+    color: var(--muted);
   }
 
   .content-panel {
-    padding: 0;
-    border: 0;
+    padding: 18px;
   }
 
   .hero-card {
-    padding: 0 0 10px;
-    color: #111827;
-    background: transparent;
-    border-radius: 0;
+    padding: 18px;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--accent-dark), #0f6b78);
+    border-radius: var(--radius);
+    break-inside: auto;
+  }
+
+  .hero-card h2 {
+    font-size: 20pt;
   }
 
   .hero-card h2,
   .hero-card .section-kicker,
   .summary {
-    color: #111827;
+    color: #ffffff;
+  }
+
+  .hero-card .section-kicker {
+    color: #afe5ed;
   }
 
   .resume-section {
-    padding-top: 14px;
-    break-inside: avoid;
+    padding-top: 20px;
+    break-inside: auto;
   }
 
   .section-heading {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     break-after: avoid;
   }
 
   .section-heading span {
-    width: auto;
-    height: auto;
-    background: transparent;
+    width: 30px;
+    height: 30px;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
   }
 
   .timeline {
-    gap: 8px;
+    gap: 12px;
   }
 
   .timeline-item,
   .skill-card,
   .language-item {
-    padding: 8px 0;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
+    background: var(--surface-muted);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
     break-inside: avoid;
+  }
+
+  .timeline-item {
+    padding: 12px 14px 12px 16px;
+  }
+
+  .item-header,
+  .compact-item {
+    grid-template-columns: minmax(0, 1fr) minmax(94px, max-content);
+    gap: 10px;
+  }
+
+  .period {
+    white-space: normal;
   }
 
   .skill-grid,
@@ -787,6 +836,6 @@ button {
   .detail,
   .skill-card li,
   .two-column-list li {
-    color: #374151;
+    color: var(--muted);
   }
 }
