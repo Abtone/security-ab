@@ -158,8 +158,9 @@ const getAtsLabels = () => {
   };
 };
 
-const appendAtsList = (target, items) => {
+const appendAtsList = (target, items, className = "") => {
   const list = create("ul");
+  if (className) list.className = className;
   appendList(list, items.filter(Boolean));
   target.appendChild(list);
   return list;
@@ -169,6 +170,32 @@ const createAtsSection = (title) => {
   const section = create("section", "ats-section");
   section.appendChild(create("h2", "", title));
   return section;
+};
+
+const getAtsAssetPath = (assetPath) => {
+  const prefix = document.documentElement.lang === "en" ? "../" : "./";
+  return `${prefix}${assetPath}`;
+};
+
+const getAtsContactItems = () => {
+  const contacts = [...cv.contact];
+  const linkedin = cv.contact.find((item) => item.href?.includes("linkedin.com"));
+
+  if (linkedin) {
+    contacts.push({
+      label: "LinkedIn",
+      value: linkedin.href,
+      href: linkedin.href,
+    });
+  }
+
+  contacts.push({
+    label: "GitHub Pages",
+    value: "https://abtone.github.io/security-ab/",
+    href: "https://abtone.github.io/security-ab/",
+  });
+
+  return contacts;
 };
 
 const isCertification = (item) =>
@@ -202,10 +229,19 @@ const renderAtsResume = () => {
   root.innerHTML = "";
 
   const header = create("header", "ats-header");
-  header.append(create("h1", "", cv.name), create("p", "ats-title", cv.profileTitle));
+  const headerContent = create("div", "ats-header-content");
+  const headerMain = create("div", "ats-header-main");
+  const photo = create("img", "ats-photo");
+
+  photo.src = getAtsAssetPath("assets/Amanda_Blanco_CV_photo.png?v=20260624-photo2");
+  photo.alt = `Foto de ${cv.name}`;
+  photo.width = 88;
+  photo.height = 98;
+
+  headerMain.append(create("h1", "", cv.name), create("p", "ats-title", cv.profileTitle));
 
   const contact = create("ul", "ats-contact");
-  cv.contact.forEach((item) => {
+  getAtsContactItems().forEach((item) => {
     const li = create("li");
     li.append(document.createTextNode(`${item.label}: `));
 
@@ -220,7 +256,9 @@ const renderAtsResume = () => {
     contact.appendChild(li);
   });
 
-  header.appendChild(contact);
+  headerMain.appendChild(contact);
+  headerContent.append(headerMain, photo);
+  header.appendChild(headerContent);
   root.appendChild(header);
 
   const profileSection = createAtsSection(labels.profile);
@@ -230,7 +268,7 @@ const renderAtsResume = () => {
   root.appendChild(profileSection);
 
   const strengthsSection = createAtsSection(labels.strengths);
-  appendAtsList(strengthsSection, cv.focus);
+  appendAtsList(strengthsSection, cv.focus, "ats-multi-list ats-strengths-list");
   root.appendChild(strengthsSection);
 
   const experienceSection = createAtsSection(labels.experience);
@@ -268,17 +306,21 @@ const renderAtsResume = () => {
   appendEducationItems(educationSection, education);
   root.appendChild(educationSection);
 
-  const certificationsSection = createAtsSection(labels.certifications);
-  appendEducationItems(certificationsSection, certifications);
-  root.appendChild(certificationsSection);
+  if (certifications.length && document.documentElement.lang !== "en") {
+    const certificationsSection = createAtsSection(labels.certifications);
+    appendEducationItems(certificationsSection, certifications);
+    root.appendChild(certificationsSection);
+  }
 
   const technologiesSection = createAtsSection(labels.technologies);
+  const technologiesGrid = create("div", "ats-tech-grid");
   cv.technologies.forEach((group) => {
     const groupSection = create("section", "ats-tech-group");
     groupSection.appendChild(create("h3", "", `${group.title}:`));
-    appendAtsList(groupSection, group.items);
-    technologiesSection.appendChild(groupSection);
+    appendAtsList(groupSection, group.items, "ats-tech-list");
+    technologiesGrid.appendChild(groupSection);
   });
+  technologiesSection.appendChild(technologiesGrid);
   root.appendChild(technologiesSection);
 
   const skillsSection = createAtsSection(labels.skills);

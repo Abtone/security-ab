@@ -671,15 +671,6 @@ button {
     padding-bottom: 5px;
   }
 
-  .profile-panel {
-    display: grid;
-    grid-template-columns: 118px minmax(0, 1fr);
-    gap: 0;
-    margin-bottom: 12px;
-    overflow: visible;
-    break-inside: avoid;
-  }
-
   .profile-panel,
   .content-panel {
     background: var(--surface);
@@ -690,8 +681,13 @@ button {
 
   .profile-panel {
     display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
     position: static;
     top: auto;
+    gap: 0;
+    margin-bottom: 12px;
+    overflow: visible;
+    break-inside: avoid;
   }
 
   .portrait-wrap {
@@ -876,6 +872,26 @@ button {
     border-bottom: 1px solid #9ca3af;
   }
 
+  .ats-header-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18pt;
+  }
+
+  .ats-header-main {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .ats-photo {
+    width: 66pt;
+    height: 74pt;
+    object-fit: cover;
+    border: 1px solid #d1d5db;
+    border-radius: 6pt;
+  }
+
   .ats-header h1 {
     margin: 0;
     color: #123c55;
@@ -939,6 +955,15 @@ button {
     margin: 4pt 0 0 14pt;
   }
 
+  .ats-multi-list {
+    column-count: 2;
+    column-gap: 22pt;
+  }
+
+  .ats-strengths-list li {
+    margin-bottom: 2pt;
+  }
+
   .ats-section li {
     margin: 0 0 3pt;
     padding-left: 1pt;
@@ -953,9 +978,21 @@ button {
   }
 
   .ats-tech-group {
-    margin: 8pt 0 0;
+    margin: 0;
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  .ats-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 22pt;
+    row-gap: 7pt;
+    align-items: start;
+  }
+
+  .ats-tech-list {
+    margin-top: 3pt !important;
   }
 
   .ats-entry-header {
