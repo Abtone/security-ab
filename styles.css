@@ -532,6 +532,10 @@ button {
   color: var(--muted);
 }
 
+.ats-resume {
+  display: none;
+}
+
 @media (max-width: 920px) {
   .app-shell {
     width: min(100% - 20px, var(--page-width));
@@ -609,7 +613,7 @@ button {
 
 @page {
   size: A4;
-  margin: 10mm;
+  margin: 12mm;
 }
 
 @media print {
@@ -837,5 +841,157 @@ button {
   .skill-card li,
   .two-column-list li {
     color: var(--muted);
+  }
+
+  .app-shell {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827;
+    font-family: Arial, "Segoe UI", sans-serif;
+    font-size: 9.2pt;
+    line-height: 1.28;
+  }
+
+  .ats-resume {
+    display: block !important;
+    width: auto;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    color: #111827;
+    background: #ffffff;
+  }
+
+  .ats-resume,
+  .ats-resume * {
+    box-shadow: none !important;
+  }
+
+  .ats-header {
+    padding-bottom: 10pt;
+    margin-bottom: 12pt;
+    border-bottom: 1px solid #9ca3af;
+  }
+
+  .ats-header h1 {
+    margin: 0;
+    color: #123c55;
+    font-size: 20pt;
+    line-height: 1.05;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .ats-title {
+    margin: 3pt 0 8pt;
+    color: #111827;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+
+  .ats-contact {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .ats-contact li {
+    margin: 2pt 0;
+  }
+
+  .ats-resume a {
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .ats-section {
+    margin: 9pt 0 0;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .ats-section h2 {
+    margin: 0 0 6pt;
+    padding-bottom: 3pt;
+    color: #123c55;
+    font-size: 11pt;
+    line-height: 1.2;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d1d5db;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ats-section p,
+  .ats-section li {
+    color: #111827;
+  }
+
+  .ats-section p {
+    margin: 0 0 6pt;
+  }
+
+  .ats-section ul {
+    padding: 0;
+    margin: 4pt 0 0 14pt;
+  }
+
+  .ats-section li {
+    margin: 0 0 3pt;
+    padding-left: 1pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .ats-entry {
+    margin: 8pt 0 0;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .ats-tech-group {
+    margin: 8pt 0 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .ats-entry-header {
+    margin-bottom: 3pt;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ats-entry h3,
+  .ats-tech-group h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 10.5pt;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  .ats-period,
+  .ats-detail,
+  .ats-subtitle {
+    margin: 2pt 0 0;
+    color: #374151;
+    font-size: 9.5pt;
+    line-height: 1.3;
+  }
+
+  .ats-subtitle {
+    font-weight: 700;
+  }
+
+  .ats-resume h1,
+  .ats-resume h2,
+  .ats-resume h3,
+  .ats-resume p,
+  .ats-resume li {
+    orphans: 2;
+    widows: 2;
   }
 }

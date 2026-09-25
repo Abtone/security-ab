@@ -140,6 +140,159 @@ const renderLanguages = () => {
   });
 };
 
+const getAtsLabels = () => {
+  const isEnglish = document.documentElement.lang === "en";
+
+  return {
+    profile: isEnglish ? "Professional Profile" : "Perfil profesional",
+    strengths: isEnglish ? "Core Competencies" : "Competencias principales",
+    experience: isEnglish ? "Professional Experience" : "Experiencia profesional",
+    success: isEnglish ? "Key Achievements / Success Cases" : "Logros / Casos de éxito",
+    education: isEnglish ? "Education and Studies" : "Educación y estudios",
+    certifications: isEnglish ? "Certifications" : "Certificaciones",
+    technologies: isEnglish ? "Technical Skills" : "Habilidades técnicas",
+    skills: isEnglish ? "Professional Skills" : "Habilidades profesionales",
+    languages: isEnglish ? "Languages" : "Idiomas",
+    keyAchievements: cv.labels?.keyAchievements || (isEnglish ? "Key achievements:" : "Logros clave:"),
+    contributionPrefix: cv.labels?.highlightPrefix || (isEnglish ? "Key contributions and achievements: " : "Contribuciones y logros clave: "),
+  };
+};
+
+const appendAtsList = (target, items) => {
+  const list = create("ul");
+  appendList(list, items.filter(Boolean));
+  target.appendChild(list);
+  return list;
+};
+
+const createAtsSection = (title) => {
+  const section = create("section", "ats-section");
+  section.appendChild(create("h2", "", title));
+  return section;
+};
+
+const isCertification = (item) =>
+  /certif|certificate|certification|certified|I27001LA|LCSPC|CSFPC|SFPC|CISSP|ICSI|CNSS|MITRE ATT&CK|TrendAI|Stellar Cyber|Advanced Cyber Threat Intelligence|B1/i.test(
+    item.title
+  );
+
+const appendEducationItems = (target, items) => {
+  items.forEach((item) => {
+    const row = create("article", "ats-entry");
+    const header = create("div", "ats-entry-header");
+    const title = create("h3", "", item.title);
+
+    header.appendChild(title);
+    if (item.period) header.appendChild(create("p", "ats-period", item.period));
+    row.appendChild(header);
+    if (item.detail) row.appendChild(create("p", "ats-detail", item.detail));
+    target.appendChild(row);
+  });
+};
+
+const renderAtsResume = () => {
+  const root = byId("ats-resume");
+  if (!root) return;
+
+  const labels = getAtsLabels();
+  const profile = Array.isArray(cv.profile) ? cv.profile : [cv.profile];
+  const education = cv.education.filter((item) => !isCertification(item));
+  const certifications = cv.education.filter(isCertification);
+
+  root.innerHTML = "";
+
+  const header = create("header", "ats-header");
+  header.append(create("h1", "", cv.name), create("p", "ats-title", cv.profileTitle));
+
+  const contact = create("ul", "ats-contact");
+  cv.contact.forEach((item) => {
+    const li = create("li");
+    li.append(document.createTextNode(`${item.label}: `));
+
+    if (item.href) {
+      const link = create("a", "", item.value);
+      link.href = item.href;
+      li.appendChild(link);
+    } else {
+      li.appendChild(create("span", "", item.value));
+    }
+
+    contact.appendChild(li);
+  });
+
+  header.appendChild(contact);
+  root.appendChild(header);
+
+  const profileSection = createAtsSection(labels.profile);
+  profile.forEach((text) => {
+    if (text) profileSection.appendChild(create("p", "", text));
+  });
+  root.appendChild(profileSection);
+
+  const strengthsSection = createAtsSection(labels.strengths);
+  appendAtsList(strengthsSection, cv.focus);
+  root.appendChild(strengthsSection);
+
+  const experienceSection = createAtsSection(labels.experience);
+  cv.experience.forEach((job) => {
+    const article = create("article", "ats-entry");
+    const header = create("div", "ats-entry-header");
+    const title = create("h3", "", job.role);
+    const meta = [job.company, job.period].filter(Boolean).join(" | ");
+
+    header.appendChild(title);
+    if (meta) header.appendChild(create("p", "ats-period", meta));
+    article.appendChild(header);
+
+    const details = [];
+    (Array.isArray(job.description) ? job.description : [job.description]).forEach((text) => {
+      if (text) details.push(text);
+    });
+    if (job.highlights) details.push(`${labels.contributionPrefix}${job.highlights}`);
+    if (details.length) appendAtsList(article, details);
+
+    if (job.achievements?.length) {
+      article.appendChild(create("p", "ats-subtitle", job.highlightTitle || labels.keyAchievements));
+      appendAtsList(article, job.achievements);
+    }
+
+    experienceSection.appendChild(article);
+  });
+  root.appendChild(experienceSection);
+
+  const successSection = createAtsSection(labels.success);
+  appendAtsList(successSection, cv.successCases || []);
+  root.appendChild(successSection);
+
+  const educationSection = createAtsSection(labels.education);
+  appendEducationItems(educationSection, education);
+  root.appendChild(educationSection);
+
+  const certificationsSection = createAtsSection(labels.certifications);
+  appendEducationItems(certificationsSection, certifications);
+  root.appendChild(certificationsSection);
+
+  const technologiesSection = createAtsSection(labels.technologies);
+  cv.technologies.forEach((group) => {
+    const groupSection = create("section", "ats-tech-group");
+    groupSection.appendChild(create("h3", "", `${group.title}:`));
+    appendAtsList(groupSection, group.items);
+    technologiesSection.appendChild(groupSection);
+  });
+  root.appendChild(technologiesSection);
+
+  const skillsSection = createAtsSection(labels.skills);
+  appendAtsList(skillsSection, cv.skills);
+  root.appendChild(skillsSection);
+
+  const languagesSection = createAtsSection(labels.languages);
+  appendAtsList(
+    languagesSection,
+    cv.languages.map((language) => `${language.name}: ${language.level}`)
+  );
+  root.appendChild(languagesSection);
+};
+
 const renderSuccessCases = () => {
   const list = byId("success-list");
   list.innerHTML = "";
@@ -169,6 +322,7 @@ const render = () => {
   renderTechnologies();
   renderSkills();
   renderLanguages();
+  renderAtsResume();
 };
 
 document.querySelector("[data-print]").addEventListener("click", () => {
