@@ -140,6 +140,11 @@ button {
   background: var(--accent-soft);
 }
 
+.print-menu {
+  position: relative;
+  flex: 0 0 auto;
+}
+
 .print-button {
   flex: 0 0 auto;
   padding: 10px 14px;
@@ -154,6 +159,41 @@ button {
 .print-button:hover,
 .print-button:focus-visible {
   background: var(--accent);
+}
+
+.print-options {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 30;
+  display: grid;
+  width: 220px;
+  padding: 6px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 38px rgba(18, 60, 85, 0.16);
+}
+
+.print-options[hidden] {
+  display: none;
+}
+
+.print-options button {
+  padding: 9px 10px;
+  color: var(--ink);
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+}
+
+.print-options button:hover,
+.print-options button:focus-visible {
+  color: var(--accent-dark);
+  background: var(--accent-soft);
 }
 
 .print-footer {
@@ -557,6 +597,7 @@ button {
     flex-basis: 100%;
   }
 
+  .print-menu,
   .print-button {
     margin-left: auto;
   }
@@ -852,13 +893,19 @@ button {
   }
 
   .ats-resume {
-    display: block !important;
+    display: none !important;
     width: auto;
     max-width: none;
     padding: 0;
     margin: 0;
     color: #111827;
     background: #ffffff;
+  }
+
+  body:not([data-print-mode]) #ats-resume,
+  body[data-print-mode="full"] #ats-resume,
+  body[data-print-mode="summary"] #ats-summary-resume {
+    display: block !important;
   }
 
   .ats-resume,
@@ -1030,5 +1077,90 @@ button {
   .ats-resume li {
     orphans: 2;
     widows: 2;
+  }
+
+  body[data-print-mode="summary"] {
+    font-size: 7.4pt;
+    line-height: 1.14;
+  }
+
+  body[data-print-mode="summary"] .ats-resume {
+    color: #111827;
+  }
+
+  body[data-print-mode="summary"] .ats-header {
+    padding-bottom: 5pt;
+    margin-bottom: 6pt;
+  }
+
+  body[data-print-mode="summary"] .ats-header-content {
+    gap: 10pt;
+  }
+
+  body[data-print-mode="summary"] .ats-photo {
+    width: 44pt;
+    height: 50pt;
+    border-radius: 4pt;
+  }
+
+  body[data-print-mode="summary"] .ats-header h1 {
+    font-size: 16pt;
+  }
+
+  body[data-print-mode="summary"] .ats-title {
+    margin: 2pt 0 4pt;
+    font-size: 9pt;
+  }
+
+  body[data-print-mode="summary"] .ats-contact li {
+    margin: 0 0 1pt;
+  }
+
+  body[data-print-mode="summary"] .ats-section {
+    margin-top: 5pt;
+  }
+
+  body[data-print-mode="summary"] .ats-section h2 {
+    margin-bottom: 3pt;
+    padding-bottom: 1.5pt;
+    font-size: 8.5pt;
+  }
+
+  body[data-print-mode="summary"] .ats-section p,
+  body[data-print-mode="summary"] .ats-section li {
+    font-size: 7.35pt;
+    line-height: 1.14;
+  }
+
+  body[data-print-mode="summary"] .ats-section p {
+    margin-bottom: 3pt;
+  }
+
+  body[data-print-mode="summary"] .ats-section ul {
+    margin-top: 2pt;
+    margin-left: 11pt;
+  }
+
+  body[data-print-mode="summary"] .ats-section li {
+    margin-bottom: 1.5pt;
+  }
+
+  body[data-print-mode="summary"] .ats-entry {
+    margin-top: 4pt;
+  }
+
+  body[data-print-mode="summary"] .ats-entry h3 {
+    font-size: 8.2pt;
+  }
+
+  body[data-print-mode="summary"] .ats-period {
+    margin-top: 0;
+    font-size: 7.1pt;
+  }
+
+  body[data-print-mode="summary"] .ats-summary-inline-list,
+  body[data-print-mode="summary"] .ats-summary-tech-list {
+    column-count: 2;
+    column-gap: 18pt;
   }
 }

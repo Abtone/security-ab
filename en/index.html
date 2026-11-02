@@ -9,7 +9,7 @@
       name="description"
       content="Curriculum vitae of Amanda Blanco, senior cybersecurity and information security professional."
     >
-    <link rel="stylesheet" href="../styles.css?v=20260925-local-pdf-photo">
+    <link rel="stylesheet" href="../styles.css?v=20260925-local-pdf-options">
   </head>
   <body>
     <div class="app-shell">
@@ -26,9 +26,15 @@
           <a href="../index.html" hreflang="es" lang="es">ES</a>
           <span aria-current="page">EN</span>
         </div>
-        <button class="print-button" type="button" data-print>
-          Export PDF
-        </button>
+        <div class="print-menu" data-print-menu>
+          <button class="print-button" type="button" data-print-toggle aria-expanded="false" aria-controls="print-options">
+            Export PDF
+          </button>
+          <div id="print-options" class="print-options" hidden>
+            <button type="button" data-print-mode="full">Full version</button>
+            <button type="button" data-print-mode="summary">Summary version, 1 page</button>
+          </div>
+        </div>
       </header>
 
       <main id="start" class="resume" aria-label="Amanda Blanco curriculum vitae">
@@ -110,9 +116,10 @@
       </main>
       <div class="print-footer" aria-hidden="true">CV23062026</div>
     </div>
-    <main id="ats-resume" class="ats-resume" aria-label="ATS resume Amanda Blanco"></main>
+    <main id="ats-resume" class="ats-resume ats-full-resume" aria-label="ATS resume Amanda Blanco"></main>
+    <main id="ats-summary-resume" class="ats-resume ats-summary-resume" aria-label="ATS summary resume Amanda Blanco"></main>
 
     <script src="./cv-data.js?v=20260818-certs"></script>
-    <script src="../app.js?v=20260925-local-pdf-photo"></script>
+    <script src="../app.js?v=20260925-local-pdf-options"></script>
   </body>
 </html>

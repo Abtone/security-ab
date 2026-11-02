@@ -217,18 +217,8 @@ const appendEducationItems = (target, items) => {
   });
 };
 
-const renderAtsResume = () => {
-  const root = byId("ats-resume");
-  if (!root) return;
-
-  const labels = getAtsLabels();
-  const profile = Array.isArray(cv.profile) ? cv.profile : [cv.profile];
-  const education = cv.education.filter((item) => !isCertification(item));
-  const certifications = cv.education.filter(isCertification);
-
-  root.innerHTML = "";
-
-  const header = create("header", "ats-header");
+const appendAtsHeader = (root, className = "") => {
+  const header = create("header", ["ats-header", className].filter(Boolean).join(" "));
   const headerContent = create("div", "ats-header-content");
   const headerMain = create("div", "ats-header-main");
   const photo = create("img", "ats-photo");
@@ -260,6 +250,64 @@ const renderAtsResume = () => {
   headerContent.append(headerMain, photo);
   header.appendChild(headerContent);
   root.appendChild(header);
+};
+
+const firstSentence = (text) => {
+  if (!text) return "";
+  const match = text.match(/^.*?[.!?](?:\s|$)/);
+  return (match ? match[0] : text).trim();
+};
+
+const matchesSummaryEducation = (item) =>
+  /Ingeniero|Máster|Master|Experto Universitario|Systems Engineer|University Master|University Expert/i.test(item.title);
+
+const matchesCyberCertification = (item) =>
+  /CSFPC|I27001LA|LCSPC|CNSS|Advanced Cyber Threat Intelligence|MITRE ATT&CK|TrendAI|Stellar Cyber|CISSP/i.test(
+    item.title
+  );
+
+const appendSummaryEducation = (target) => {
+  const selected = cv.education.filter((item) => matchesSummaryEducation(item) || matchesCyberCertification(item));
+  const list = create("ul", "ats-summary-inline-list");
+
+  appendList(
+    list,
+    selected.map((item) =>
+      [item.title, item.period, item.detail].filter(Boolean).join(" | ")
+    )
+  );
+  target.appendChild(list);
+};
+
+const getSummaryTechnologies = () => {
+  const securityGroup = cv.technologies.find((group) =>
+    /seg\.|security solutions|soluciones/i.test(group.title)
+  );
+  const aiGroup = cv.technologies.find((group) => /AI|Automat/i.test(group.title));
+  const programmingGroup = cv.technologies.find((group) => /Program/i.test(group.title));
+  const cloudGroup = cv.technologies.find((group) => /Cloud/i.test(group.title));
+
+  return [
+    ...(securityGroup?.items || []).filter((item) =>
+      /Datadog|Stellar Cyber|Wazuh|FortiSIEM|Trend|Netskope|Tenable|Nessus|OpenVAS|EDR|XDR|SIEM|SOAR/i.test(item)
+    ),
+    ...(aiGroup?.items || []),
+    ...(programmingGroup?.items || []),
+    ...(cloudGroup?.items || []),
+  ].slice(0, 18);
+};
+
+const renderAtsResume = () => {
+  const root = byId("ats-resume");
+  if (!root) return;
+
+  const labels = getAtsLabels();
+  const profile = Array.isArray(cv.profile) ? cv.profile : [cv.profile];
+  const education = cv.education.filter((item) => !isCertification(item));
+  const certifications = cv.education.filter(isCertification);
+
+  root.innerHTML = "";
+  appendAtsHeader(root);
 
   const profileSection = createAtsSection(labels.profile);
   profile.forEach((text) => {
@@ -335,6 +383,56 @@ const renderAtsResume = () => {
   root.appendChild(languagesSection);
 };
 
+const renderAtsSummaryResume = () => {
+  const root = byId("ats-summary-resume");
+  if (!root) return;
+
+  const labels = getAtsLabels();
+  const profile = Array.isArray(cv.profile) ? cv.profile : [cv.profile];
+
+  root.innerHTML = "";
+  appendAtsHeader(root, "ats-summary-header");
+
+  const profileSection = createAtsSection(labels.profile);
+  profileSection.appendChild(create("p", "", profile[0] || ""));
+  root.appendChild(profileSection);
+
+  const strengthsSection = createAtsSection(labels.strengths);
+  appendAtsList(strengthsSection, cv.focus.slice(0, 12), "ats-multi-list ats-strengths-list");
+  root.appendChild(strengthsSection);
+
+  const experienceSection = createAtsSection(labels.experience);
+  cv.experience.slice(0, 4).forEach((job) => {
+    const article = create("article", "ats-entry ats-summary-entry");
+    const header = create("div", "ats-entry-header");
+    const meta = [job.company, job.period].filter(Boolean).join(" | ");
+    const descriptions = Array.isArray(job.description) ? job.description : [job.description];
+
+    header.appendChild(create("h3", "", job.role));
+    if (meta) header.appendChild(create("p", "ats-period", meta));
+    article.appendChild(header);
+    appendAtsList(article, [firstSentence(descriptions[0])]);
+    experienceSection.appendChild(article);
+  });
+  root.appendChild(experienceSection);
+
+  const educationSection = createAtsSection(labels.education);
+  appendSummaryEducation(educationSection);
+  root.appendChild(educationSection);
+
+  const technologiesSection = createAtsSection(labels.technologies);
+  appendAtsList(technologiesSection, getSummaryTechnologies(), "ats-multi-list ats-summary-tech-list");
+  root.appendChild(technologiesSection);
+
+  const languagesSection = createAtsSection(labels.languages);
+  appendAtsList(
+    languagesSection,
+    cv.languages.map((language) => `${language.name}: ${language.level}`),
+    "ats-summary-inline-list"
+  );
+  root.appendChild(languagesSection);
+};
+
 const renderSuccessCases = () => {
   const list = byId("success-list");
   list.innerHTML = "";
@@ -365,10 +463,43 @@ const render = () => {
   renderSkills();
   renderLanguages();
   renderAtsResume();
+  renderAtsSummaryResume();
 };
 
-document.querySelector("[data-print]").addEventListener("click", () => {
-  window.print();
-});
+const setupPrintMenu = () => {
+  const menu = document.querySelector("[data-print-menu]");
+  const toggle = document.querySelector("[data-print-toggle]");
+  const options = document.querySelector(".print-options");
+
+  if (!menu || !toggle || !options) return;
+
+  const closeOptions = () => {
+    options.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  toggle.addEventListener("click", () => {
+    const isOpen = !options.hidden;
+    options.hidden = isOpen;
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+
+  options.querySelectorAll("[data-print-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.body.dataset.printMode = button.dataset.printMode || "full";
+      closeOptions();
+      requestAnimationFrame(() => window.print());
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target)) closeOptions();
+  });
+
+  window.addEventListener("afterprint", () => {
+    delete document.body.dataset.printMode;
+  });
+};
 
 render();
+setupPrintMenu();
