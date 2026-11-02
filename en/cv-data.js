@@ -47,9 +47,19 @@ window.cvData = {
     ],
     experience: [
       {
+        company: "Periferia IT",
+        role: "Senior Cybersecurity Engineer",
+        period: "October 2026 - Present",
+        description: [
+          "Responsible for leading the end-to-end response to cybersecurity incidents for Davibank, from identification, classification, and prioritization through containment, eradication, and recovery. Coordinate technical teams and business areas to minimize organizational impact and support timely, risk-based decision-making.",
+          "Participate in the response to high-criticality incidents through investigation, analysis, remediation, and root cause analysis. Validate preventive, detective, and corrective controls, identify security gaps and emerging risks, and recommend improvement opportunities to strengthen the organization's security posture.",
+          "Strengthen coordination between technical teams and business stakeholders through executive communication, response-action tracking, and decision-making focused on operational continuity and risk reduction.",
+        ],
+      },
+      {
         company: "Anida Latam",
         role: "Senior Cybersecurity Engineer",
-        period: "January 2025 - Present",
+        period: "January 2025 - July 2026",
         description: [
           "Responsible for assigning, coordinating, and tracking SOC operational activities, providing technical training and mentoring to L1, L2, and L3 cybersecurity analysts, and following up on team training and certification plans. Provides technical support and advanced analysis for complex security incidents and alerts, administers and operates cybersecurity platforms such as SIEM, EDR, XDR, and monitoring tools, and manages the optimization of cybersecurity operational processes.",
           "Actively contributes to the creation, update, and continuous improvement of security procedures, protocols, and playbooks, as well as the design and optimization of operational workflows for client alert notification and escalation. Responsible for incident handling and documentation, coordination of response to critical events, and preparation of monthly SOC service reports and security metrics for clients.",

@@ -42,9 +42,19 @@ window.cvData = {
     ],
     experience: [
       {
+        company: "Periferia IT",
+        role: "Ingeniero en Ciberseguridad Senior",
+        period: "Octubre 2026 - Actualidad",
+        description: [
+          "Responsable de liderar la respuesta integral ante incidentes de ciberseguridad para Davibank, desde su identificación, clasificación y priorización hasta la contención, erradicación y recuperación. Coordino equipos técnicos y áreas de negocio para minimizar el impacto sobre la organización y asegurar decisiones oportunas basadas en riesgo.",
+          "Participo en la atención de incidentes de alta criticidad mediante investigación, análisis, remediación y análisis de causa raíz. Valido controles preventivos, detectivos y correctivos, identifico brechas y riesgos emergentes, y propongo oportunidades de mejora para fortalecer la postura de seguridad.",
+          "Fortalezco la coordinación entre equipos técnicos y áreas de negocio mediante comunicación ejecutiva, seguimiento de acciones de respuesta y toma de decisiones orientada a la continuidad operativa y la reducción del riesgo.",
+        ],
+      },
+      {
         company: "Anida Latam",
         role: "Ingeniero de Ciberseguridad Senior",
-        period: "Enero 2025 - Actualidad",
+        period: "Enero 2025 - Julio 2026",
         description: [
           "Responsable de la asignación, coordinación y seguimiento de actividades operativas del equipo SOC, brindando entrenamiento y acompañamiento técnico a analistas de ciberseguridad L1, L2 y L3, así como seguimiento a planes de capacitación y certificaciones del equipo. Encargada del apoyo técnico y análisis avanzado de incidentes y alertas complejas de seguridad, administración y operación de plataformas de ciberseguridad como SIEM, EDR, XDR y herramientas de monitoreo, además de la gestión y optimización de procesos operativos de ciberseguridad.",
           "Participación activa en la elaboración, actualización y mejora continua de procedimientos, protocolos y playbooks de seguridad, así como en el diseño y optimización de flujos operativos para notificación y escalamiento de alertas hacia clientes. Responsable de la atención y documentación de incidentes de seguridad, coordinación de respuesta ante eventos críticos y elaboración de informes mensuales de servicios SOC y métricas de seguridad para clientes.",
